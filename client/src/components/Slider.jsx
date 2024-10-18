@@ -1,6 +1,5 @@
 import { View, Text, FlatList, Image, Dimensions } from "react-native";
 import React from "react";
-import LinearGradient from "react-native-linear-gradient";
 import Animated, {
   Extrapolation,
   interpolate,
@@ -77,14 +76,11 @@ const Slider = () => {
         }}
       >
         <Image
-          className=""
           style={{ width: 300, height: 200, borderRadius: 20 }}
           source={item.image}
           blurRadius={0}
         />
-        <LinearGradient
-          colors={["transparent", "rgba(0,0,0,0.8)"]}
-          className=""
+        <View
           style={{
             position: "absolute",
             width: 300,
@@ -104,7 +100,7 @@ const Slider = () => {
             {item.title}
           </Text>
           <Text>{item.description}</Text>
-        </LinearGradient>
+        </View>
       </View>
     );
   };

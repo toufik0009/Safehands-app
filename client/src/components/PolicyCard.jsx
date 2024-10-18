@@ -1,11 +1,14 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
+import { colors } from "../utils/colors";
+import { fonts } from "../utils/fonts";
+import { scale, verticalScale, moderateScale } from "react-native-size-matters";
 
 const PolicyCard = () => {
   return (
     <View
       style={{
-        backgroundColor: "#4BA4F8",
+        backgroundColor: colors.secondary,
         borderRadius: 20,
         marginVertical: 15,
         padding: 15,
@@ -41,7 +44,7 @@ const PolicyCard = () => {
         <View>
           <TouchableOpacity
             style={{
-              backgroundColor: "#FFFFFF",
+              backgroundColor: colors.primary,
 
               paddingHorizontal: 10,
               paddingVertical: 5,
@@ -51,7 +54,7 @@ const PolicyCard = () => {
             <Text
               style={{
                 fontSize: 14,
-                color: "#4BA4F8",
+                color: colors.white,
                 fontWeight: "600",
               }}
             >

@@ -4,6 +4,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { colors } from "../../utils/colors";
 import { fonts } from "../../utils/fonts";
 import { ImagePaths } from "../../constants/ImagePaths";
+import { Link } from "expo-router";
 
 const InsurancePolicyScreen = () => {
   return (
@@ -50,6 +51,7 @@ const InsurancePolicyScreen = () => {
         <Text style={styles.footerText}>Powered by</Text>
         <Image source={ImagePaths.logo} style={styles.footerLogo} />
       </View>
+      <Link href={"/profileSetting"}>next</Link>
     </SafeAreaView>
   );
 };

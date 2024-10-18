@@ -1,12 +1,12 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import Icon from "react-native-vector-icons/Ionicons";
-const CustomCard = ({ icon, name, about }) => {
+const MyPolicyCard = ({ image, name, about }) => {
   return (
     <View style={{}}>
       <View style={styles.cardIndividual}>
         <View style={styles.cardIndividualLeft}>
-          <Icon name={icon} size={30} color={"#000000"} />
+          <Image source={image} style={styles.imageCard} />
         </View>
         <View style={styles.cardIndividualMiddle}>
           <Text style={styles.name}>{name}</Text>
@@ -22,7 +22,7 @@ const CustomCard = ({ icon, name, about }) => {
   );
 };
 
-export default CustomCard;
+export default MyPolicyCard;
 
 const styles = StyleSheet.create({
   cardIndividual: {

@@ -4,7 +4,7 @@ import { Stack, Redirect } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 SplashScreen.preventAutoHideAsync();
 const RootLayout = () => {
-  const [isLogin, setIsLogin] = useState(false);
+  const [isLogin, setIsLogin] = useState(true);
   useEffect(() => {
     setTimeout(() => {
       SplashScreen.hideAsync();
@@ -13,7 +13,7 @@ const RootLayout = () => {
   return (
     <>
       <Stack screenOptions={{ headerShown: false }} />
-      {!isLogin ? <Redirect href={"/(main)"} /> : <Redirect href={"/(auth)"} />}
+      {isLogin ? <Redirect href={"/(main)"} /> : <Redirect href={"/(auth)"} />}
     </>
   );
 };

@@ -5,29 +5,30 @@ import { ImagePaths } from "../../src/constants/ImagePaths";
 import { colors } from "../utils/colors";
 import { fonts } from "../utils/fonts";
 import { scale, verticalScale, moderateScale } from "react-native-size-matters";
-const HelpItem = () => {
-  const helpOptions = [
-    { icon: "car", title: "Add Vehicle" },
-    { icon: "car", title: "Check Challan" },
-    { icon: "car", title: "Find Medical Expenses" },
-    { icon: "car", title: "Check Data Breach" },
-    { icon: "car", title: "Diabetes Reversal" },
-    { icon: "car", title: "Pre-Diabetes risk" },
-    { icon: "car", title: "OPD Centre" },
-    { icon: "car", title: "View All" },
+const TrustedCastomerInfo = () => {
+  const TrustedCastomerInfo = [
+    { icon: "car", customersNo: "24/7", title: "Customer Support" },
+    { icon: "car", customersNo: "12000", title: "Cashless Hospital" },
+    { icon: "car", customersNo: "10000", title: "Cashless Garages" },
   ];
-  const renderHelpItem = ({ item, index }) => (
-    <View key={index} style={styles.helpItem}>
-      <Icon style={styles.icon} name={item.icon} size={24} color="#000" />
-      <Text style={styles.helpText}>{item.title}</Text>
+  const renderTrustedCastomerInfo = ({ item, index }) => (
+    <View style={styles.infoCard}>
+      <Icon
+        style={styles.icon}
+        name={item.icon}
+        size={20}
+        color={colors.black}
+      />
+      <Text style={styles.numberText}>{item.customersNo}</Text>
+      <Text style={styles.titleText}>{item.title}</Text>
     </View>
   );
   return (
     <View style={styles.contentContainer}>
       <FlatList
         scrollEnabled={false}
-        data={helpOptions}
-        renderItem={renderHelpItem}
+        data={TrustedCastomerInfo}
+        renderItem={renderTrustedCastomerInfo}
         keyExtractor={(item) => item.title}
         numColumns={4}
         style={styles.flatList}
@@ -37,7 +38,7 @@ const HelpItem = () => {
   );
 };
 
-export default HelpItem;
+export default TrustedCastomerInfo;
 
 const styles = StyleSheet.create({
   contentContainer: {
@@ -45,29 +46,34 @@ const styles = StyleSheet.create({
   },
   flatList: {
     paddingVertical: verticalScale(20),
-    // backgroundColor: "green",
+    paddingHorizontal: scale(20),
   },
   columnWrapper: {
     justifyContent: "space-between",
   },
-  helpItem: {
-    // justifyContent: "center",
+  infoCard: {
     alignItems: "center",
-    width: scale(60),
-    // height: 120,
-    // backgroundColor: "red",
-    paddingBottom: scale(15),
+    width: scale(80),
   },
   icon: {
     padding: moderateScale(15),
     backgroundColor: colors.tarnary,
     borderRadius: 10,
   },
-  helpText: {
-    marginTop: verticalScale(5),
-    fontSize: 12,
-    textAlign: "center",
+  numberText: {
+    fontSize: 24,
     fontWeight: "700",
+    marginTop: 8,
+    textAlign: "center",
+    lineHeight: 29,
+  },
+  titleText: {
+    fontFamily: "Montserrat",
+    fontSize: 12,
     color: "#646567",
+    textAlign: "center",
+    marginTop: 4,
+    fontWeight: "700",
+    lineHeight: 15,
   },
 });

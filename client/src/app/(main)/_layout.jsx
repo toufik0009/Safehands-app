@@ -2,6 +2,7 @@ import { View, Text } from "react-native";
 import React from "react";
 import { Tabs } from "expo-router";
 import Icon from "react-native-vector-icons/Ionicons";
+import { FontAwesome } from "@expo/vector-icons";
 const MainStack = () => {
   return (
     <Tabs
@@ -44,12 +45,8 @@ const MainStack = () => {
         options={{
           title: "Discover",
           tabBarIcon: ({ focused }) => (
-            // <Image
-            //   style={{ tintColor: focused ? "black" : "gray" }}
-            //   source={require("../../assets/images/DiscoverIcon.png")}
-            // />
             <Icon
-              name="home-outline"
+              name="search-outline"
               size={30}
               color={focused ? "black" : "gray"}
             />
@@ -62,7 +59,7 @@ const MainStack = () => {
           title: "My Policy",
           tabBarIcon: ({ focused }) => (
             <Icon
-              name="home-outline"
+              name="document-text-outline"
               size={30}
               color={focused ? "black" : "gray"}
             />
@@ -75,7 +72,7 @@ const MainStack = () => {
           title: "Profile",
           tabBarIcon: ({ focused }) => (
             <Icon
-              name="home-outline"
+              name="person-outline"
               size={30}
               color={focused ? "black" : "gray"}
             />

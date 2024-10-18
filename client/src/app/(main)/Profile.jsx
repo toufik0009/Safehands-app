@@ -10,11 +10,16 @@ import {
 import React from "react";
 import { ImagePaths } from "../../constants/ImagePaths";
 import CustomCard from "@/src/components/CustomCard";
+import Icon from "react-native-vector-icons/Ionicons";
+import { FontAwesome } from "@expo/vector-icons";
+import { colors } from "../../utils/colors";
+import { fonts } from "../../utils/fonts";
+import { scale, verticalScale, moderateScale } from "react-native-size-matters";
 const ProfileScreen = () => {
   return (
     <ScrollView>
       <View style={{ alignItems: "center" }}>
-        <View style={{ width: "100%", height: 100 }}></View>
+        <View style={{ width: "100%", height: verticalScale(100) }}></View>
         <View
           style={{
             width: "94%",
@@ -22,30 +27,30 @@ const ProfileScreen = () => {
             borderWidth: 1,
             borderColor: "#838385",
             borderRadius: 10,
-            paddingHorizontal: 10,
-            paddingBottom: 15,
-            marginBottom: 15,
+            paddingHorizontal: scale(10),
+            paddingBottom: verticalScale(15),
+            marginBottom: verticalScale(15),
           }}
         >
           <View style={{ alignItems: "center" }}>
             <View
               style={{
-                marginTop: -60,
-                width: 100,
-                height: 100,
-                borderRadius: 50,
-                backgroundColor: "#E9F9FF",
+                marginTop: verticalScale(-50),
+                width: moderateScale(80),
+                height: moderateScale(80),
+                borderRadius: moderateScale(40),
+                backgroundColor: colors.tarnary,
                 justifyContent: "center",
                 alignItems: "center",
               }}
             >
-              <Image source={ImagePaths.profileImage} />
+              <Icon name="person-sharp" size={30} color={colors.white} />
             </View>
             <Text
               style={{
                 fontSize: 14,
-                paddingHorizontal: 15,
-                backgroundColor: "#94C1FB",
+                paddingHorizontal: scale(15),
+                backgroundColor: colors.tarnary,
                 borderRadius: 20,
                 marginVertical: 5,
               }}
@@ -55,8 +60,8 @@ const ProfileScreen = () => {
             <Text
               style={{
                 fontSize: 14,
-                paddingHorizontal: 10,
-                marginVertical: 5,
+                paddingHorizontal: scale(10),
+                marginVertical: verticalScale(5),
               }}
             >
               +91 1234567890
@@ -70,14 +75,14 @@ const ProfileScreen = () => {
               borderColor: "#BDBEBF",
               borderRadius: 10,
               justifyContent: "space-between",
-              padding: 10,
+              padding: moderateScale(10),
               flexDirection: "row",
             }}
           >
             <View
               style={{
                 width: "70%",
-                padding: 10,
+                padding: moderateScale(10),
               }}
             >
               <Text
@@ -114,22 +119,22 @@ const ProfileScreen = () => {
             </View>
           </View>
           <CustomCard
-            image={ImagePaths.profileImage}
+            icon={"person-sharp"}
             name={"My Profile"}
             about={"Name, Date of Birth, City"}
           />
           <CustomCard
-            image={ImagePaths.profileImage}
+            icon={"list"}
             name={"Sync my health data"}
             about={"Track all of your activity"}
           />
           <CustomCard
-            image={ImagePaths.profileImage}
+            icon={"share-social-sharp"}
             name={"Share App"}
             about={"Share here app with your friend & fimaly"}
           />
           <CustomCard
-            image={ImagePaths.profileImage}
+            icon={"book"}
             name={"Terms & Conditions"}
             about={"read Terms & Conditions of Here"}
           />
