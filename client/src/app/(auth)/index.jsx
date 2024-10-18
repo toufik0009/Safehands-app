@@ -10,8 +10,11 @@ import {
 import { ImagePaths } from "../../constants/ImagePaths";
 import { colors } from "../../utils/colors";
 import { fonts } from "../../utils/fonts";
+import { Link } from "expo-router";
+import { useRouter } from "expo-router";
 
 const LoginScreen = () => {
+  const router = useRouter();
   const [mobileNumber, setMobileNumber] = useState("");
   const [buttonActive, setButtonActive] = useState(false);
 
@@ -40,7 +43,10 @@ const LoginScreen = () => {
           />
         </View>
 
-        <TouchableOpacity style={styles.loginButton}>
+        <TouchableOpacity
+          style={styles.loginButton}
+          onPress={() => router.push("/verify_otp")}
+        >
           <Text style={styles.loginButtonText}>Login</Text>
         </TouchableOpacity>
 
@@ -65,7 +71,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   logo: {
-    width: 310,
+    width: 312,
     height: 70,
   },
 

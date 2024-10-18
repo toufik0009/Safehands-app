@@ -6,6 +6,7 @@ const AuthStack = () => {
     <Stack screenOptions={{ headerShown: false }}>
       <Stack.Screen name="index" />
       <Stack.Screen name="verify_otp" />
+      <Stack.Screen name="policy" />
     </Stack>
   );
 };

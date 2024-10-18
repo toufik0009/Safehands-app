@@ -1,3 +1,4 @@
+import { Link } from "expo-router";
 import React, { useState } from "react";
 import {
   View,
@@ -71,6 +72,8 @@ const OTPInputScreen = () => {
         Didn't receive the code? <Text style={styles.resend}>Resend in</Text>{" "}
         {timer}s
       </Text>
+
+      <Link href={"/policy"}>next</Link>
     </SafeAreaView>
   );
 };

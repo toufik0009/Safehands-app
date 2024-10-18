@@ -13,5 +13,5 @@
     "**/*.tsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts"
-, "src/app/(main)/index.jsx", "src/app/(main)/_layout.jsx", "src/app/(auth)/_layout.jsx", "src/app/(auth)/index.jsx", "src/constants/ImagePaths.js"  ]
+, "src/app/(main)/index.jsx", "src/app/(main)/_layout.jsx", "src/app/(auth)/_layout.jsx", "src/app/(auth)/index.jsx", "src/constants/ImagePaths.js", "src/app/(main)/Profile.jsx", "src/app/(main)/My_Policy.jsx", "src/components/CustomCard.jsx", "src/components/GestureHandlerSlider.jsx", "src/components/PolicyCard.jsx", "src/components/Card.jsx", "src/components/AutoSlider.jsx"  ]
 }
