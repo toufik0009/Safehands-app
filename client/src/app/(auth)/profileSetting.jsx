@@ -8,6 +8,7 @@ import {
   ScrollView,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { useRouter } from "expo-router";
 import Icon from "react-native-vector-icons/Ionicons";
 import { colors } from "../../utils/colors";
 import { fonts } from "../../utils/fonts";
@@ -15,11 +16,15 @@ import { ImagePaths } from "../../constants/ImagePaths";
 import { scale, verticalScale, moderateScale } from "react-native-size-matters";
 
 const ProfileSettingScreen = () => {
+  const router = useRouter();
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.headerPart}>
         {/* back button */}
-        <TouchableOpacity style={styles.backArrow}>
+        <TouchableOpacity
+          style={styles.backArrow}
+          onPress={() => router.back()}
+        >
           <Icon name="chevron-back-outline" size={30} color={colors.black} />
         </TouchableOpacity>
         {/* Header */}

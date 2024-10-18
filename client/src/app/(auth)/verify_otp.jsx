@@ -1,5 +1,6 @@
 import { Link } from "expo-router";
 import React, { useState } from "react";
+import { useRouter } from "expo-router";
 import {
   View,
   Text,
@@ -9,9 +10,13 @@ import {
   KeyboardAvoidingView,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-
+import { scale, verticalScale, moderateScale } from "react-native-size-matters";
+import Icon from "react-native-vector-icons/Ionicons";
+import { fonts } from "../../utils/fonts";
+import { colors } from "../../utils/colors";
 const OTPInputScreen = () => {
-  const [otp, setOtp] = useState(["", "", "", "", "", ""]);
+  const router = useRouter();
+  const [otp, setOtp] = useState(["", "", "", ""]);
   const [timer, setTimer] = useState(28);
 
   const handleInputChange = (value, index) => {
@@ -35,8 +40,8 @@ const OTPInputScreen = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <TouchableOpacity style={styles.backButton}>
-        <Text style={styles.backText}>{"<"}</Text>
+      <TouchableOpacity style={styles.backButton} onPress={() => router.back()}>
+        <Icon name="chevron-back-outline" size={30} color={colors.black} />
       </TouchableOpacity>
 
       <Text style={styles.title}>Enter the OTP</Text>
@@ -82,12 +87,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#f4f4f4",
-    padding: 20,
+    padding: moderateScale(17),
     // justifyContent: "center",
   },
   backButton: {
-    marginTop: 20,
-    marginBottom: 10,
+    marginVertical: verticalScale(35),
   },
   backText: {
     fontSize: 18,
@@ -97,21 +101,21 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontWeight: "600",
     textAlign: "left",
-    marginBottom: 10,
+    marginBottom: verticalScale(10),
   },
   subtitle: {
     fontSize: 14,
     color: "gray",
     textAlign: "left",
-    marginBottom: 20,
+    marginBottom: verticalScale(20),
   },
   otpContainer: {
     flexDirection: "row",
-    justifyContent: "space-between",
-    marginHorizontal: 0,
+    justifyContent: "space-evenly",
+    marginHorizontal: scale(30),
   },
   otpInput: {
-    width: 45,
+    width: scale(45),
     aspectRatio: 1,
     textAlign: "center",
     fontSize: 24,
@@ -123,12 +127,12 @@ const styles = StyleSheet.create({
   buttonsContainer: {
     flexDirection: "row",
     justifyContent: "space-around",
-    marginTop: 20,
+    marginTop: verticalScale(20),
   },
   smsButton: {
-    backgroundColor: "#fff",
-    paddingVertical: 10,
-    paddingHorizontal: 25,
+    backgroundColor: colors.white,
+    paddingVertical: verticalScale(10),
+    paddingHorizontal: scale(25),
     borderRadius: 10,
     alignItems: "center",
     borderWidth: 0.5,
@@ -136,8 +140,8 @@ const styles = StyleSheet.create({
   },
   whatsappButton: {
     backgroundColor: "#fff",
-    paddingVertical: 10,
-    paddingHorizontal: 25,
+    paddingVertical: verticalScale(10),
+    paddingHorizontal: scale(25),
     borderRadius: 10,
     alignItems: "center",
     borderWidth: 0.5,
@@ -145,12 +149,12 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: 16,
-    color: "#000",
+    color: colors.black,
   },
   resendText: {
     textAlign: "center",
-    color: "#000",
-    marginTop: 20,
+    color: colors.black,
+    marginTop: verticalScale(20),
   },
   resend: {
     fontWeight: "200",
